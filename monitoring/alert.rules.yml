@@ -1,0 +1,20 @@
+# Load into Prometheus with: rule_files: ['alert.rules.yml']
+groups:
+  - name: task-api-alerts
+    rules:
+      - alert: AppDown
+        expr: up{job="task-api"} == 0
+        for: 1m
+        labels: { severity: critical }
+        annotations:
+          summary: "Task API is down"
+          description: "The task-api target has been unreachable for 1 minute."
+
+      - alert: HighErrorRate
+        expr: |
+          sum(rate(http_requests_total{status=~"5.."}[2m]))
+          / sum(rate(http_requests_total[2m])) > 0.05
+        for: 2m
+        labels: { severity: warning }
+        annotations:
+          summary: "Error rate above 5%"

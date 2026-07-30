@@ -1,0 +1,4 @@
+region        = "us-east-1"
+instance_type = "t2.micro"
+environment   = "workshop"
+key_name      = "my-ec2-keypair"   # replace with your key pair name
