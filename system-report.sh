@@ -23,3 +23,7 @@ STAMP() { echo -n "[$(date '+%F %T')] "; }
  # on main branch conflict
 
 # on main branch conflict
+
+ # on main branch conflict
+# on main branch conflict
+# on main branch conflict
