@@ -15,15 +15,4 @@ STAMP() { echo -n "[$(date '+%F %T')] "; }
 } | tee -a "$LOGFILE"
 
 
-
-
-
-
-####
- # on main branch conflict
-
-# on main branch conflict
-
- # on main branch conflict
-# on main branch conflict
 # on main branch conflict
